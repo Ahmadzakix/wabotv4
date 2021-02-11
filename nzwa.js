@@ -101,15 +101,15 @@ const { limit } = require('./database/menu/limit')
 // Load Vcard Contact
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:HLXBOT–¤\n' // full name
+            + 'FN:HLXBOT\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
             + 'TEL;type=CELL;type=VOICE;waid=083873394995:+6283873394995\n' // WhatsApp ID + phone number
             + 'END:VCARD'
 prefix = botPrefix
 blocked = []
 limitawal = userDefaultLimit
-cr = '*HLX-BOT Verified*'
-memberlimit = memberLimitss
+cr = '*🤖HLX-BOT🤖 VERIFIED*'
+memberlimit = memberLimit
 
 // Functions
 const getLevelingXp = (userId) => {
