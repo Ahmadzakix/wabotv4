@@ -2562,7 +2562,7 @@ async function starts() {
 						await wait(media).then(res => {
          						nzwa.sendMessage(from, res.video, video, {quoted: mek, caption: res.teks.trim()})
 						}).catch(err => {
-							reply(err)
+							reply(err) 
 		      				})
 					} else {
 						reply('Foto aja mas')
@@ -2584,3 +2584,35 @@ async function starts() {
 	})
 }
 starts()
+
+ case prefix+'join':
+
+            if (args.length === 1) return tobz.reply(from, 'Hanya Owner yang bisa memasukan Bot ke dalam Grup!', id)
+
+            if (!isOwner) return tobz.reply(from, 'Perintah ini hanya untuk Owner Zaki', id)
+
+            const link = body.slice(6)
+
+            const tGr = await tobz.getAllGroups()
+
+            const minMem = 5
+
+            const isLink = link.match(/(https:\/\/chat.whatsapp.com)/gi)
+
+            const check = await tobz.inviteInfo(link)
+
+            if (!isLink) return tobz.reply(from, 'Ini link? 👊🤬', id)
+
+            if (tGr.length > 256) return tobz.reply(from, 'Maaf jumlah group sudah maksimal!', id)
+
+            if (check.size < minMem) return tobz.reply(from, 'Member group tidak melebihi 5, bot tidak bisa masuk', id)
+
+            if (check.status === 200) {
+
+                await tobz.joinGroupViaLink(link).then(() => tobz.reply(from, 'Bot akan segera masuk!'))
+
+            } else {
+
+                tobz.reply(from, 'Link group tidak valid!', id)
+
+            }
