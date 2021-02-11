@@ -103,7 +103,7 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:HLXBOT–¤\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=12542123926:+6283873394995\n' // WhatsApp ID + phone number
+            + 'TEL;type=CELL;type=VOICE;waid=083873394995:+6283873394995\n' // WhatsApp ID + phone number
             + 'END:VCARD'
 prefix = botPrefix
 blocked = []
